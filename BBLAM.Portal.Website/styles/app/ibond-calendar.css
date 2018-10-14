@@ -1,0 +1,92 @@
+.g-gb, .g-gb a { color: #ad2121; }
+.g-sa, .g-sa a { color: #1e90ff; }
+.g-soe, .g-soe a { color: #e3bc08; }
+.g-tb, .g-tb a { color: #800080; }
+.g-cb, .g-cb a { color: #006400; }
+.g-gpn, .g-gpn a { color: #1b1b1b; }
+
+.event-gb { background-color: #ad2121; }
+.event-sa { background-color: #1e90ff; }
+.event-soe { background-color: #e3bc08; }
+.event-tb { background-color: #800080; }
+.event-cb { background-color: #006400; }
+.event-gpn { background-color: #1b1b1b; }
+
+.cal-event-list ul li:first-child { border-bottom: 1px dotted #fff; }
+.cal-event-list ul li { padding: 5px 0px; }
+.cal-event-list ul li div { font-size: 12px; color: #eee; }
+.cal-event-list ul li a { color: #eee; }
+.cal-event-list ul li a:hover { color: #fff; }
+
+#cal-slide-tick.tick-day1 {
+  display: none;
+}
+#cal-slide-tick.tick-day2 {
+  left: 8.333333%;
+}
+#cal-slide-tick.tick-day3 {
+  left: 25%;
+}
+#cal-slide-tick.tick-day4 {
+  left: 41.666667%;
+}
+#cal-slide-tick.tick-day5 {
+  left: 58.333333%;
+}
+#cal-slide-tick.tick-day6 {
+  left: 75%;
+}
+#cal-slide-tick.tick-day7 {
+  display: none;
+}
+
+
+.s, .a { font-size: 11px; display: inline-block; width: 45%; }
+.s { font-weight: 600; }
+.a { text-align: right; }
+.total { display: block; font-size: 11px; font-weight: 600; text-align: center; width: 100%; }
+
+.events-list {
+	max-height: 125px;
+	padding-left: 5px;
+}
+.cal-row-head {
+	border-bottom: 5px #90DA00 solid;
+    background-color: #e2e2e2;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+   border-left: 1px #eee solid;
+}
+.cal-row-fluid .cal-cell1-6 {
+	width: 16.66666666666667%;
+	*width: 16.66666666666667%;
+}
+.cal-month-day {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 125px;
+}
+.cal-day-inmonth > span { font-weight: bold; color: darkgreen;}
+.cal-day-weekend > span { display: none; }
+
+.events-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 5px;
+  width: 100%;
+}
+
+.btn-month {
+    width: 7.692307692307692%;
+}
+.cal-day-today {
+    background-color: /*#e8fde7*/#cde2c7;
+}
+.cal-day-today span[data-cal-date] {
+    color: darkgreen;
+}

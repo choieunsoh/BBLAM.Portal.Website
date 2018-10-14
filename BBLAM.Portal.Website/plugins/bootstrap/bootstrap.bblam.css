@@ -1,0 +1,6 @@
+.form-control {
+    border: 1px solid #ecaaaa;
+}
+.form-control:focus {
+    border-color: #e38080;
+}

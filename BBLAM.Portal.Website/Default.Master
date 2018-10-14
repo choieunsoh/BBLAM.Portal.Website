@@ -1,0 +1,226 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="BBLAM.Web.UI.MasterPageBase" %>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<html class="no-js" lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Kiattipong Kamonrat" />
+
+    <title>BBLAM Risk 2018</title>
+    <meta name="description" content="BBLAM" />
+    <meta name="keywords" content="BBLAM" />
+    
+	<link rel="shortcut icon" type="image/x-icon" href="<% =ResolveUrl("~/favicon.ico")%>" />
+    <link rel="shortcut icon" type="image/ico" href="<% =ResolveUrl("~/favicon.ico")%>" /> 
+       
+    <!-- Reset All CSS -->
+    <link href="<% =ResolveUrl("~/styles/reset.css")%>" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Core CSS -->
+    <link href="<% =ResolveUrl("~/plugins/bootstrap/bootstrap.min.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/plugins/bootstrap/bootstrap.bblam.css")%>" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome CSS -->
+    <script src="<% =ResolveUrl("~/fonts/fontawesome5/svg-with-js/js/fontawesome-all.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/fonts/fontawesome5/svg-with-js/js/fa-v4-shims.min.js")%>"></script>
+    <!--
+    <link href="<% =ResolveUrl("~/fonts/fontawesome5/css/fontawesome.min.css")%>" rel="stylesheet" type="text/css" />
+    -->
+    <!-- Animation CSS -->
+    <link href="<% =ResolveUrl("~/styles/animate.min.css")%>" rel="stylesheet" type="text/css" />
+    <!-- Font CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700,300,400italic,500italic,600italic&subset=thai,latin' rel='stylesheet' type='text/css'>
+    
+    <!--[if lt IE 8]>
+    <link href="<% =ResolveUrl("~/plugins/bootstrap/bootstrap-ie7.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/styles/fonts/font-awesome-ie7.min.css")%>" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Bootstrap Plugins CSS -->
+    <link href="<% =ResolveUrl("~/plugins/bootstrap-dialog/bootstrap-dialog.min.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/plugins/bootstrap-select/bootstrap-select-1.10.0.min.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/plugins/bootstrap-daterangepicker/bootstrap-daterangepicker.css")%>" rel="stylesheet" type="text/css" />
+
+    <!-- Plugins -->
+
+    <!-- HTML5 & CSS3 -->
+    <script src="<% =ResolveUrl("~/plugins/common/modernizr-2.8.3.min.js")%>"></script>
+        
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="<% =ResolveUrl("~/plugins/common/html5shiv-3.7.3.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/common/respond-1.4.2.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/common/es5-shim-4.4.1.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/common/es5-sham-4.4.1.min.js")%>"></script>
+    <script>var start = new Date().getTime();</script>
+    <![endif]-->
+
+    <!-- Kendo CSS -->
+    <link href="<% =ResolveUrl("~/plugins/kendo/kendo.common-bootstrap.min.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/plugins/kendo/kendo.bootstrap.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<% =ResolveUrl("~/plugins/kendo/kendo.crm.css")%>" rel="stylesheet" type="text/css" />
+
+    <link href="<% =ResolveUrl("styles/default.css")%>" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body class="en crm" data-mobile-default="0">
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-default navbar-fixed-top navbar-crm">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul class="app-name nav navbar-nav navbar-right">
+                        <a class="navbar-brand header" href="<% =ResolveUrl("~/Default.aspx")%>"></a>
+                    </ul>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav menu-ul">
+                        <li class="menu-li"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-clipboard-list"></i> Reports<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi-level">
+
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Reports/Equity/Equity.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Equity Report</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Reports/Equity/EquityOrigin.aspx")%>"><i class="fa fa-fw fa-globe"></i> Equity Report by Origin</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Reports/Equity/EquityDetail.aspx")%>"><i class="fa fa-fw fa-usd"></i> Equity Report by Currency</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Reports/Liquidity/Liquidity.aspx")%>"><i class="fa fa-fw fa-money-bill-alt"></i> Liquidity Report</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Reports/Liquidity/LiquiditySector.aspx")%>"><i class="fa fa-fw fa-money-bill-alt"></i> Liquidity Report by Type</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Reports/Counterparty/Counterparty.aspx")%>"><i class="fa fa-fw fa-users"></i> Counterparty Report</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-li"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-line-chart"></i> Portfolio Performance<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi-level">
+
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Performance/Default.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Portfolio Performance Report</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/Default.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Monthly Fun Fact Sheet</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/Summary.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Monthly Fun Fact Sheet Summary</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/IndexData.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Index Daily Return</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/IndexSim.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Index Simulated Return</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-li"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-cogs"></i> Settings<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi-level">
+
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Limit/Equity.aspx")%>">Equity Limit</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Limit/Liquidity.aspx")%>">Liquidity Limit</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Limit/Counterparty.aspx")%>">Counterparty Line</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Limit/CounterpartyList.aspx")%>">Counterparty List</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/Index.aspx")%>">Index Information</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/IndexReturn.aspx")%>">Index Daily Return</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/Portfolio.aspx")%>">Portfolio Benchmark Setting</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/Weight.aspx")%>">Benchmark Component Setting</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="menu-li"><a href="<% =ResolveUrl("~/EN/Login/Logout.aspx")%>"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                    </ul>
+                    <ul class="app-name nav navbar-nav navbar-right">
+                        <li><h1 class="header-crm">BBLAM Risk 2018<small><span class="hidden-xs hidden-sm"></span></small> </h1></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <div class="footer-page"></div>
+        <div class="footer navbar-fixed-bottom">
+            Copyright © <%=DateTime.Today.Year %> by BBLAM. All Rights Reserved
+        </div>
+
+    </div>
+    <input type="hidden" id="myObject" runat="server" class="my-object" />
+    <input type="hidden" id="myVersion" data-field="version" />
+  
+    <script type="text/x-kendo-template" id="template">
+        <div class="row">
+            <div class="col-xs-7 col-sm-9 btn-toolbar">
+            </div>
+            <div class="col-xs-3 col-sm-2 pull-right"><button class="k-grid-excel btn btn-excel pull-right"><i class="fa fa-download" aria-hidden="true"></i></button></div>
+        </div>
+    </script>
+  
+    <script type="text/x-kendo-template" id="templateAdd">
+        <div class="row">
+            <div class="col-xs-7 col-sm-9 btn-toolbar">
+                <button class="btn btn-success btn-add"><i class="fa fa-plus"></i> Add</button>
+            </div>
+            <div class="col-xs-3 col-sm-2 pull-right"><button class="k-grid-excel btn btn-excel pull-right"><i class="fa fa-download" aria-hidden="true"></i></button></div>
+        </div>
+    </script>
+  
+    <script type="text/x-kendo-template" id="templateExcelAll">
+        <div class="row">
+            <div class="col-xs-7 col-sm-9 btn-toolbar">
+            </div>
+            <div class="col-xs-3 col-sm-2 pull-right"><button class="k-grid-excel-all btn btn-excel pull-right"><i class="fa fa-download" aria-hidden="true"></i></button></div>
+        </div>
+    </script>
+
+    <!-- jQuery -->
+    <script src="<% =ResolveUrl("~/plugins/jquery/jquery-1.11.3-ie8.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/jquery/jquery-migrate-1.3.0.min.js")%>"></script> 
+    <script src="<% =ResolveUrl("~/plugins/jquery/jquery.easing-1.3.2.min.js")%>"></script>
+    
+     <!-- Moment DateTime -->
+    <script src="<% =ResolveUrl("~/plugins/moment/moment-2.11.1-holidays.min.js")%>"></script> 
+        
+     <!-- Underscore -->
+    <script src="<% =ResolveUrl("~/plugins/common/underscore-1.8.3.min.js")%>"></script>
+   
+     <!-- Bootstrap -->
+    <script src="<% =ResolveUrl("~/plugins/bootstrap/bootstrap-3.3.6.min.js")%>"></script>    
+
+    <!-- Bootstrap Plugins -->
+    <script src="<% =ResolveUrl("~/plugins/bootstrap-dialog/bootstrap-dialog.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/bootstrap-select/bootstrap-select-1.10.0.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker-4.17.37-ibond.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/bootstrap-daterangepicker/bootstrap-daterangepicker-2.1.17.min.js")%>"></script>
+    
+    <!-- Plugins -->
+    <script src="<% =ResolveUrl("~/plugins/jquery-nicescroll/jquery.nicescroll-3.7.0.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/mask/jquery.mask-1.14.10.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/inputmask/jquery.inputmask.bundle-4.0.0.min.js")%>"></script>
+
+    <!-- Kendo -->
+    <script src="<% =ResolveUrl("~/plugins/kendo/kendo.all-2016.1.112.min.js")%>"></script>
+    <script src="<% =ResolveUrl("~/plugins/kendo/jszip-2.5.0.min.js")%>"></script>
+
+     <!-- App -->
+    <script src="<% =ResolveUrl("~/scripts/utils.js")%>"></script>
+    <script src="<% =ResolveUrl("~/scripts/default.js")%>"></script>
+
+    <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
+
+</body>
+</html>

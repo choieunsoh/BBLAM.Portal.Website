@@ -1,0 +1,603 @@
+﻿/*
+#002080
+#002699
+#002db3
+#0033cc color
+#0039e6
+#0040ff
+#1a53ff
+
+#00129D
+
+#a05700
+#b96400
+#d37200
+#ec8000 grid-border
+#ff8d06
+#ff9920
+#ffa53a
+
+*/
+body {
+    font: normal 13px/1.35em 'Open Sans','tahoma', Arial;
+    overflow-x: hidden;
+    padding-bottom: 25px;
+}
+a, a:valid, a:link {
+    color: #03c;
+}
+a:focus, a:hover {
+    color: #f60 ;
+    text-decoration: none;
+}
+a.list-group-item,
+a.list-group-item:visited {
+    color: #03c;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+a.list-group-item:focus, a.list-group-item:hover {
+    color: #f60 ;
+}
+
+.bootstrap-dialog .bootstrap-dialog-message {
+    color: #000;
+}
+.bold { font-weight: bold; }
+.header {
+    background: url(../images/bblam.jpg) no-repeat;
+    height: 40px;
+    width: 159px;
+    margin-right: 25px;
+    margin-top: 5px;
+    margin-left:5px;
+}
+.navbar-brand {
+}
+.navbar-nav > li > a {
+    margin-top: 10px;
+    line-height: 30px;
+    /*height: 50px;*/
+    padding: 0 30px;
+}
+.app-name > li > h1 {
+    color: #fff;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.app-name > li > h1 > small {
+    color: #de6b6b;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.footer {
+    border-top: 1px solid #808080;
+    text-align: center;
+    font-size: 0.8em;
+    color: #fdfbfb;
+    background-color: #00129D;
+}
+.footer-page {
+}
+.page-title {
+    text-align: right;
+    vertical-align: middle;
+    line-height: 76px;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 40px;
+    /*text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);*/
+}
+.heading-title {
+    font-weight: bold;
+    color: #002080;
+    background: #e5eaf9;
+    border-bottom: 2px solid #002db3;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+    padding-left: 10px;
+}
+.heading-title h4 {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px;
+}
+#main { margin-top: 50px; }
+.chart {
+    border: 1px solid #808080;
+    min-height: 500px;
+}
+
+.form-horizontal {
+    /*border: 1px solid #fff;*/
+}
+.form-horizontal .form-control-static {
+    padding-bottom: 0 !important;
+    display: inline-block;
+}
+.toggle.btn {
+    min-width: 100%;
+}
+.form-group {
+    min-height: 34px;
+}
+.form-group-inline div {
+    padding-left: 0;
+    padding-right: 0;
+}
+.form-group-inline div:first-child {
+    padding-right: 5px;
+}
+.form-group-inline div:last-child {
+    padding-left: 5px;
+}
+.form-horizontal .has-feedback .k-autocomplete .form-control-feedback {
+    right: 0 !important;
+}
+.form-horizontal .has-feedback .input-group.date + .form-control-feedback {
+    right: 50px !important;
+}
+.form-data-wrapper.last {
+    margin-bottom: 50px;
+}
+.search-group > div { padding-right: 0; }
+.search-group > div + div { padding-left: 5px; }
+.search-group > div:last-child { padding-right: 15px; }
+
+/****************************** CRM ******************************/
+/*
+    #de6b6b
+    #e38080
+    #e79595
+    #ecaaaa     <<
+    #f1bfbf
+    #f5d4d4
+    #fae9e9
+*/
+body.crm {
+    background: #fdfbfb;
+    color: #765555;
+}
+/* Bootstrap Select */
+/* main ul dropdown */
+body.crm .bootstrap-select .dropdown-menu {
+    /*background-color: #434343;*/
+}
+body.crm .bootstrap-select .dropdown-menu.openright::after {
+    /*border-bottom-color: #434343 !important;*/
+}
+body.crm .bootstrap-select .dropdown-menu .ranges {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+/* list text color */
+body.crm .bootstrap-select .dropdown-menu li a {
+    /*color: #000;*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+/* on list hover */
+body.crm .bootstrap-select .dropdown-menu > li > a:focus, 
+body.crm .bootstrap-select .dropdown-menu > li > a:hover {
+    background-color: #f5d4d4;
+}
+/* default drowdown */
+body.crm .bootstrap-select .btn-default {
+    /*border-color: #727272;
+    background-color: #434343;
+    color: #ADADAD;*/
+}
+/* on click dropdown */
+body.crm .bootstrap-select .btn-default.active, 
+body.crm .bootstrap-select .btn-default:active, 
+body.crm .bootstrap-select.open > .dropdown-toggle.btn-default {
+    border-color: #e38080;
+    background-color: #de6b6b;
+}
+/* on hover dropdown */
+body.crm .bootstrap-select .btn-default.hover, 
+body.crm .bootstrap-select .btn-default:hover {
+    border-color: #e38080;
+    background-color: #fdfbfb;
+}
+body.crm .bootstrap-select.btn-group.disabled, 
+body.crm .bootstrap-select.btn-group > .disabled {
+    /*background-color: #212121;
+    border-color: #727272;*/
+}
+/* DateTime Picker */
+body.crm .bootstrap-datetimepicker-widget table td.today:before {
+    border-bottom-color: #e38080;
+}
+
+.navbar-crm {
+    background: #00129D;
+}
+.menu-li {
+}
+.menu-ul{
+}
+.navbar-brand, .navbar-nav > li > a {
+    padding-right:10px; 
+    padding-left:10px; 
+    font-weight:600;
+    /*height:20px;
+    line-height:20px;*/
+}
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
+    margin:0px;
+}
+.dropdown-menu>li>a{
+    color: inherit;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+    color: #03c;
+    background-color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #f5f5f5;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #f60;
+}
+.bootstrap-dialog.type-primary .modal-header {
+    background-color: #de6b6b;
+}
+
+.btn-toolbar {
+    padding-left: 5px !important;
+}
+.btn-primary{
+    background-color:#de6b6b;
+    border-color:#de6b6b;
+}
+.btn-primary:hover{
+    background-color:#ecaaaa;
+    border-color:#ecaaaa;
+}
+.header-crm {
+    margin-top:10px !important;
+    font-size: 24px;
+}
+
+.navbar-nav{
+    margin:0px;
+}
+
+.btn-excel {
+    padding: 4px 8px;
+    background-color: #fff;
+    color: #EC8000;
+    border: 1px solid #b96400;
+}
+.btn-excel:hover {
+    background-color: #EC8000;
+    color: #fff;
+    border: 1px solid #b96400;
+}
+
+.search-result-header {
+    line-height: 1.44;
+    font-size: 14px;
+    color: #de6b6b;
+    padding-left: 5px;
+    font-weight: 600;
+    /* padding-top: 6px; */
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.has-error .help-block  , .has-error .control-label , .has-error .form-control{
+    color:red;
+    border-color:red;
+}
+
+.menu-li-sp {
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:dotted #ecaaaa;
+}
+
+.k-filter-menu .k-button{
+    width:initial;
+}
+
+.form-control[readonly]{
+    background-color:#fdfbfb;
+}
+
+
+/* Bootstrap Dialog */
+.modal-dialog { color: #000; }
+
+/* Kendo Autocomplete */
+ul.k-list > li.k-item > table > tbody > tr > td span { font-weight: bold; color: #F00; }
+#txtInstitutionNameEn_listbox > li.k-item > table > tbody > tr > td:first-child { font-weight: 500; width: 100px; }
+#txtInstitutionNameEn_listbox > li.k-item > table > tbody > tr > td:nth-child(2) { width: 100%; }
+
+/* Tab with Error */
+.nav-tabs li.has-error > div.help-block {
+    padding: 10px 15px;
+    margin: 0;
+}
+
+label.control-label + button {
+    margin-left: 15px;
+}
+.form-button-group {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 50px;
+} 
+
+.k-file-success .k-progress{
+    background-color : #FAFAE9;
+}
+
+/* Multi-level NavBar */
+.caret {
+    margin-left: 10px;
+}
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+    float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+/* SMALL SIZE */
+.grid-xs {
+    margin-bottom: 20px;
+}
+.grid-xs.k-grid {
+    font-size: 11px !important;
+}
+.grid-xs.k-grid th {
+    font-size: 11px !important;
+}
+.grid-xs.k-grouping-row td {
+    padding: 5px !important;
+}
+.grid-xs .rating-select,
+.grid-xs .k-grid-content .input-xs {
+    font-size: 11px;
+    padding: 1px;
+    margin-left: 5px;
+    line-height: 1.2;
+    height: 16px;
+    width: 70%;
+}
+.grid-xs.k-grid td {
+    padding: 2px 5px !important;
+    border-left: 1px solid #ccc;
+    color: #000;
+}
+
+.k-state-selected,
+.k-state-selected:hover,
+.k-grid tr:hover,
+.k-grid tr.k-alt:hover {
+    background: transparent;
+}
+
+.grid-xs.k-grid td.k-detail-cell {
+    /*padding: 5px !important;*/
+}
+
+.grid-xs .k-input {
+    text-align: right;
+    padding: 1px;
+    font-size: 11px;
+    line-height: 1;
+}
+.grid-xs .k-numeric-wrap {
+    border: none !important;
+    height: 22px;
+}
+.grid-xs .k-numeric-wrap .k-input {
+    width: 95%;
+}
+.grid-xs .k-numerictextbox .k-select {
+    width: 15px;
+}
+.grid-xs .k-numerictextbox .k-link {
+    height: 10px;
+    width: 15px;
+}
+.grid-xs td.k-edit-cell {
+    padding: 0 !important;
+}
+
+ul.navbar-nav i.fa {
+    width: 20px;
+    text-align: center;
+}
+
+.default-menu {
+    margin-top: 100px;
+}
+
+.export-png {
+    right: 5px;
+    top: 5px;
+    position: absolute;
+}
+.export-png button {
+    font-size: 9px;
+    padding: 3px 6px;
+}
+
+
+/* Bootstrap DateTimePicker Plugin */
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    margin: 2px 0;
+    padding: 2px 0;
+    width: 23em;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child,
+.bootstrap-datetimepicker-widget table thead tr:first-child th {
+    background: #00129D;
+    color: #ffffff;
+    border-radius: 0px;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+    background: #0018d0;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+    border-bottom-color: #00129D;
+}
+.bootstrap-datetimepicker-widget table th {
+    height: 30px;
+    line-height: 30px;
+    width: 40px;
+}
+.bootstrap-datetimepicker-widget .timepicker-picker table tbody tr td button.btn-primary {
+    background-color: #00129D;
+}
+.bootstrap-datetimepicker-widget .timepicker-picker table tbody tr td button.btn-primary:hover {
+    background-color: #0018d0;
+    color: #fff;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td span.active {
+    background-color: #0018d0;
+    color: #ffffff;
+}
+.bootstrap-datetimepicker-widget table td.active:hover,
+.bootstrap-datetimepicker-widget table td span.active:hover {
+    background-color: #001bea;
+    color: #ffffff;
+}
+.bootstrap-datetimepicker-widget table td.holiday {
+    background: #f66;
+    color: #eee;
+    background: #e5e5e5;
+    color: #777;
+    /*cursor: not-allowed;*/
+}
+.bootstrap-datetimepicker-widget table td.holiday:hover {
+    background: #f99;
+    color: #ddd;
+    background: #e5e5e5;
+    color: #333;
+    /*cursor: not-allowed;*/
+}
+.bootstrap-datetimepicker-widget table td.weekend,
+.bootstrap-datetimepicker-widget table td.weekend:hover {
+    background: #c373c3;
+    color: #fff;
+    /*cursor: not-allowed;*/
+}
+.bootstrap-datetimepicker-widget table td.saturday,
+.bootstrap-datetimepicker-widget table td.saturday:hover,
+.bootstrap-datetimepicker-widget table td.disabled.saturday,
+.bootstrap-datetimepicker-widget table td.disabled.saturday:hover {
+    background: none;
+    color: #c373c3;
+    /*cursor: not-allowed;*/
+}
+.bootstrap-datetimepicker-widget table td.sunday,
+.bootstrap-datetimepicker-widget table td.sunday:hover,
+.bootstrap-datetimepicker-widget table td.disabled.sunday,
+.bootstrap-datetimepicker-widget table td.disabled.sunday:hover {
+    background: none;
+    color: #ff0000;
+    /*cursor: not-allowed;*/
+}
+.bootstrap-datetimepicker-widget table td.old.weekend,
+.bootstrap-datetimepicker-widget table td.old.weekend:hover,
+.bootstrap-datetimepicker-widget table td.new.weekend,
+.bootstrap-datetimepicker-widget table td.new.weekend:hover {
+    background: none;
+    color: #777;
+    /*cursor: not-allowed;*/
+}
+.bootstrap-datetimepicker-widget table td span {
+    width: 20% !important;
+}
+.bootstrap-datetimepicker-widget .datepicker-decades table td {
+    line-height: 40px !important;
+}
+.bootstrap-datetimepicker-widget .datepicker-decades table td span {
+    width: 30% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+}
+.bootstrap-datetimepicker-widget .datepicker-decades table td span:empty {
+    display: none;
+}
+
+/*========== BOOTSTRAP ==========*/
+/* http://getbootstrap.com/css/#grid */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media only screen and (max-width: 767px) {
+    .page-title {
+        font-size: 2.5em;
+        line-height: 1em;
+        text-align: center;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .page-title {
+        font-size: 2em;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .page-title {
+        font-size: 2.5em;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and  (min-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+    .page-title {
+        font-size: 2em;
+    }
+}

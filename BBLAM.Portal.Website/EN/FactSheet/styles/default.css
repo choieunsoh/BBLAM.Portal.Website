@@ -1,0 +1,10 @@
+﻿.k-grid .k-group-col {
+    width: 15px;
+}
+.text-remark {
+    color: #f00 !important;
+}
+.row-asof .text-right {
+    text-align: center;
+    font-weight: bold;
+}

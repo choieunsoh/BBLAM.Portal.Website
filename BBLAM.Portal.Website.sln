@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBLAM.Portal.Website", "BBLAM.Portal.Website\BBLAM.Portal.Website.csproj", "{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBLAM.MutualFund.PortfolioFileReader", "BBLAM.MutualFund.PortfolioFileReader\BBLAM.MutualFund.PortfolioFileReader.csproj", "{25E25AEF-A081-4143-AD31-0DCEED7E63FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25E25AEF-A081-4143-AD31-0DCEED7E63FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25E25AEF-A081-4143-AD31-0DCEED7E63FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25E25AEF-A081-4143-AD31-0DCEED7E63FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25E25AEF-A081-4143-AD31-0DCEED7E63FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {751A8A5D-05F8-4AEB-B398-83FE7BDE77B5}
+	EndGlobalSection
+EndGlobal

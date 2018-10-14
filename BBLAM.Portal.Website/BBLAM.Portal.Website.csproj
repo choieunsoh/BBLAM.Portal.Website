@@ -1,0 +1,562 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BBLAM.Portal.Website</RootNamespace>
+    <AssemblyName>BBLAM.Portal.Website</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\32bit\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.4\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.4\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.4\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2016.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2016.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2016.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2016.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2016.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Telerik\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="dll\32bit\Oracle.DataAccess.dll" />
+    <Content Include="dll\64bit\Oracle.DataAccess.dll" />
+    <Content Include="dll\Oracle.ManagedDataAccess.dll" />
+    <Content Include="dll\Telerik\Telerik.Windows.Documents.Core.dll" />
+    <Content Include="dll\Telerik\Telerik.Windows.Documents.Spreadsheet.dll" />
+    <Content Include="dll\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll" />
+    <Content Include="dll\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll" />
+    <Content Include="dll\Telerik\Telerik.Windows.Zip.dll" />
+    <Content Include="EN\Benchmark\IndexSim.aspx" />
+    <Content Include="EN\Benchmark\IndexData.aspx" />
+    <Content Include="EN\Benchmark\scripts\index-sim.js" />
+    <Content Include="EN\Benchmark\scripts\index-data.js" />
+    <Content Include="EN\Benchmark\scripts\index.js" />
+    <Content Include="EN\Benchmark\scripts\index-return.js" />
+    <Content Include="EN\Benchmark\scripts\weight.js" />
+    <Content Include="EN\Benchmark\Index.aspx" />
+    <Content Include="EN\Benchmark\IndexReturn.aspx" />
+    <Content Include="EN\Benchmark\Weight.aspx" />
+    <Content Include="EN\Benchmark\Portfolio.aspx" />
+    <Content Include="EN\Benchmark\scripts\portfolio.js" />
+    <Content Include="EN\Benchmark\styles\default.css" />
+    <Content Include="EN\Data\scripts\stock.js" />
+    <Content Include="EN\Data\Stock.aspx" />
+    <Content Include="EN\Data\Hiport.aspx" />
+    <Content Include="EN\Data\Delta.aspx" />
+    <Content Include="EN\Data\scripts\hiport.js" />
+    <Content Include="EN\Data\scripts\delta.js" />
+    <Content Include="EN\Data\styles\stock.css" />
+    <Content Include="EN\Data\styles\delta.css" />
+    <Content Include="EN\Data\styles\hiport.css" />
+    <Content Include="EN\FactSheet\scripts\summary.js" />
+    <Content Include="EN\FactSheet\styles\summary.css" />
+    <Content Include="EN\FactSheet\Summary.aspx" />
+    <Content Include="EN\FundReturn\PF.aspx" />
+    <Content Include="EN\FundReturn\PVD.aspx" />
+    <Content Include="EN\FundReturn\scripts\pf.js" />
+    <Content Include="EN\FundReturn\scripts\pvd.js" />
+    <Content Include="EN\FundReturn\styles\pf.css" />
+    <Content Include="EN\FundReturn\styles\pvd.css" />
+    <Content Include="EN\Limit\CounterpartyList.aspx" />
+    <Content Include="EN\Limit\Counterparty.aspx" />
+    <Content Include="EN\Limit\Liquidity.aspx" />
+    <Content Include="EN\Limit\Equity.aspx" />
+    <Content Include="EN\Limit\scripts\counterparty-list.js" />
+    <Content Include="EN\Limit\scripts\counterparty.js" />
+    <Content Include="EN\Limit\scripts\liquidity.js" />
+    <Content Include="EN\Limit\scripts\equity.js" />
+    <Content Include="EN\Limit\styles\default.css" />
+    <Content Include="EN\Login\Login.aspx" />
+    <Content Include="EN\Login\Logout.aspx" />
+    <Content Include="EN\Login\scripts\login.js" />
+    <Content Include="EN\Login\styles\default.css" />
+    <Content Include="EN\MailAlert\Default.aspx" />
+    <Content Include="EN\MailAlert\scripts\default.js" />
+    <Content Include="EN\MailAlert\styles\default.css" />
+    <Content Include="EN\FactSheet\Default.aspx" />
+    <Content Include="EN\FactSheet\scripts\default.js" />
+    <Content Include="EN\FactSheet\styles\default.css" />
+    <Content Include="EN\Performance\Detail.aspx" />
+    <Content Include="EN\Performance\Default.aspx" />
+    <Content Include="EN\Performance\Period.aspx" />
+    <Content Include="EN\Performance\scripts\detail.js" />
+    <Content Include="EN\Performance\scripts\default.js" />
+    <Content Include="EN\Performance\scripts\period.js" />
+    <Content Include="EN\Performance\styles\default.css" />
+    <Content Include="EN\Performance\styles\period.css" />
+    <Content Include="EN\Reports\Counterparty\Counterparty.aspx" />
+    <Content Include="EN\Reports\Counterparty\scripts\counterparty.js" />
+    <Content Include="EN\Reports\Counterparty\styles\counterparty.css" />
+    <Content Include="EN\Reports\Liquidity\LiquidityPeriod.aspx" />
+    <Content Include="EN\Reports\Liquidity\LiquiditySector.aspx" />
+    <Content Include="EN\Reports\Liquidity\Liquidity.aspx" />
+    <Content Include="EN\Reports\Equity\EquityPeriodDetail.aspx" />
+    <Content Include="EN\Reports\Equity\EquityPeriod.aspx" />
+    <Content Include="EN\Reports\Equity\EquityDetail.aspx" />
+    <Content Include="EN\Reports\Equity\EquityOrigin.aspx" />
+    <Content Include="EN\Reports\Equity\Equity.aspx" />
+    <Content Include="EN\Reports\Liquidity\scripts\liquidity-sector.js" />
+    <Content Include="EN\Reports\Liquidity\scripts\liquidity-period.js" />
+    <Content Include="EN\Reports\Liquidity\scripts\liquidity.js" />
+    <Content Include="EN\Reports\Liquidity\styles\liquidity-sector.css" />
+    <Content Include="EN\Reports\Liquidity\styles\liquidity-period.css" />
+    <Content Include="EN\Reports\Liquidity\styles\liquidity.css" />
+    <Content Include="EN\Reports\Equity\scripts\equity-period-detail.js" />
+    <Content Include="EN\Reports\Equity\scripts\equity-period.js" />
+    <Content Include="EN\Reports\Equity\scripts\equity-detail.js" />
+    <Content Include="EN\Reports\Equity\scripts\equity-origin.js" />
+    <Content Include="EN\Reports\Equity\scripts\equity.js" />
+    <Content Include="EN\Reports\Equity\styles\equity-period-detail.css" />
+    <Content Include="EN\Reports\Equity\styles\equity-period.css" />
+    <Content Include="EN\Reports\Equity\styles\equity-detail.css" />
+    <Content Include="EN\Reports\Equity\styles\equity-origin.css" />
+    <Content Include="EN\Reports\Equity\styles\equity.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome5\svg-with-js\css\fa-svg-with-js.css" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-brands.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-brands.min.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-regular.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-regular.min.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-solid.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-solid.min.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-v4-shims.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fa-v4-shims.min.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fontawesome-all.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fontawesome-all.min.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fontawesome.js" />
+    <Content Include="fonts\fontawesome5\svg-with-js\js\fontawesome.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons.svg" />
+    <Content Include="fonts\social-share-kit.svg" />
+    <Content Include="fonts\fontawesome5\css\fa-brands.css" />
+    <Content Include="fonts\fontawesome5\css\fa-brands.min.css" />
+    <Content Include="fonts\fontawesome5\css\fa-regular.css" />
+    <Content Include="fonts\fontawesome5\css\fa-regular.min.css" />
+    <Content Include="fonts\fontawesome5\css\fa-solid.css" />
+    <Content Include="fonts\fontawesome5\css\fa-solid.min.css" />
+    <Content Include="fonts\fontawesome5\css\fontawesome-all.css" />
+    <Content Include="fonts\fontawesome5\css\fontawesome-all.min.css" />
+    <Content Include="fonts\fontawesome5\css\fontawesome.css" />
+    <Content Include="fonts\fontawesome5\css\fontawesome.min.css" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-brands-400.svg" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-regular-400.svg" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-solid-900.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\bblam.jpg" />
+    <Content Include="plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="plugins\bootstrap-daterangepicker\bootstrap-daterangepicker-2.1.17.js" />
+    <Content Include="plugins\bootstrap-daterangepicker\bootstrap-daterangepicker-2.1.17.min.js" />
+    <Content Include="plugins\bootstrap-daterangepicker\bootstrap-daterangepicker.css" />
+    <Content Include="plugins\bootstrap-datetimepicker\bootstrap-datetimepicker-4.17.37-ibond.js" />
+    <Content Include="plugins\bootstrap-datetimepicker\bootstrap-datetimepicker-4.17.37-ibond.min.js" />
+    <Content Include="plugins\bootstrap-datetimepicker\bootstrap-datetimepicker-4.17.37.min.js" />
+    <Content Include="plugins\bootstrap-datetimepicker\bootstrap-datetimepicker.cp.css" />
+    <Content Include="plugins\bootstrap-datetimepicker\bootstrap-datetimepicker.css" />
+    <Content Include="plugins\bootstrap-datetimepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="plugins\bootstrap-dialog\bootstrap-dialog.min.css" />
+    <Content Include="plugins\bootstrap-dialog\bootstrap-dialog.min.js" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select-1.10.0.css" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select-1.10.0.js" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select-1.10.0.min.css" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select-1.10.0.min.js" />
+    <Content Include="plugins\bootstrap-switch\bootstrap-switch-3.3.2.js" />
+    <Content Include="plugins\bootstrap-switch\bootstrap-switch-3.3.2.min.js" />
+    <Content Include="plugins\bootstrap-switch\bootstrap-switch.css" />
+    <Content Include="plugins\bootstrap-switch\bootstrap-switch.min.css" />
+    <Content Include="plugins\bootstrap-toggle\bootstrap-toggle-2.2.0.js" />
+    <Content Include="plugins\bootstrap-toggle\bootstrap-toggle-2.2.0.min.js" />
+    <Content Include="plugins\bootstrap-toggle\bootstrap-toggle.css" />
+    <Content Include="plugins\bootstrap-toggle\bootstrap-toggle.min.css" />
+    <Content Include="plugins\bootstrap\bootstrap-3.3.6.min.js" />
+    <Content Include="plugins\bootstrap\bootstrap-4.0.0.js" />
+    <Content Include="plugins\bootstrap\bootstrap-4.0.0.min.js" />
+    <Content Include="plugins\bootstrap\bootstrap-ie7.css" />
+    <Content Include="plugins\bootstrap\bootstrap.bblam.css" />
+    <Content Include="plugins\bootstrap\bootstrap.css" />
+    <Content Include="plugins\bootstrap\bootstrap.js" />
+    <Content Include="plugins\bootstrap\bootstrap.min.css" />
+    <Content Include="plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-grid.css" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-grid.min.css" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-reboot.css" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-reboot.min.css" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap.css" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap.min.css" />
+    <Content Include="plugins\common\css3-mediaqueries.js" />
+    <Content Include="plugins\common\es5-sham-4.4.1.min.js" />
+    <Content Include="plugins\common\es5-shim-4.4.1.min.js" />
+    <Content Include="plugins\common\html5shiv-3.7.3.min.js" />
+    <Content Include="plugins\common\html5shiv-printshiv-3.7.3.min.js" />
+    <Content Include="plugins\common\modernizr-2.8.3.min.js" />
+    <Content Include="plugins\common\respond-1.4.2.min.js" />
+    <Content Include="plugins\common\underscore-1.8.3.min.js" />
+    <Content Include="plugins\FormValidation\formValidation-thaibma.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\css\formValidation.css" />
+    <Content Include="plugins\FormValidation\v0.8.1\css\formValidation.min.css" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\formValidation.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\formValidation.min.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\formValidation.popular.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\formValidation.popular.min.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\framework\bootstrap.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\framework\bootstrap.min.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\language\en_US.js" />
+    <Content Include="plugins\FormValidation\v0.8.1\js\language\th_TH.js" />
+    <Content Include="plugins\humps.js" />
+    <Content Include="plugins\inputmask\jquery.inputmask.bundle-4.0.0.js" />
+    <Content Include="plugins\inputmask\jquery.inputmask.bundle-4.0.0.min.js" />
+    <Content Include="plugins\inputmask\js\inputmask.date.extensions.js" />
+    <Content Include="plugins\inputmask\js\inputmask.extensions.js" />
+    <Content Include="plugins\inputmask\js\inputmask.numeric.extensions.js" />
+    <Content Include="plugins\inputmask\js\inputmask.phone.extensions.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone-be.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone-ca.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone-nl.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone-ru.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone-uk.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone-us.js" />
+    <Content Include="plugins\inputmask\js\phone-codes\phone.js" />
+    <Content Include="plugins\jquery-nicescroll\jquery.nicescroll-3.7.0.js" />
+    <Content Include="plugins\jquery-nicescroll\jquery.nicescroll-3.7.0.min.js" />
+    <Content Include="plugins\jquery\jquery-1.11.3-ie8.min.js" />
+    <Content Include="plugins\jquery\jquery-1.12.0.js" />
+    <Content Include="plugins\jquery\jquery-1.12.0.min.js" />
+    <Content Include="plugins\jquery\jquery-3.3.1.min.js" />
+    <Content Include="plugins\jquery\jquery-migrate-1.3.0.min.js" />
+    <Content Include="plugins\jquery\jquery-migrate-1.4.1.min.js" />
+    <Content Include="plugins\jquery\jquery-migrate-3.0.0.min.js" />
+    <Content Include="plugins\jquery\jquery-ui-1.11.4.min.js" />
+    <Content Include="plugins\jquery\jquery.easing-1.3.2.min.js" />
+    <Content Include="plugins\jquery\jquery.signalR-2.2.0.js" />
+    <Content Include="plugins\jquery\jquery.signalR-2.2.0.min.js" />
+    <Content Include="plugins\kendo\Bootstrap\editor.png" />
+    <Content Include="plugins\kendo\Bootstrap\imagebrowser.png" />
+    <Content Include="plugins\kendo\Bootstrap\indeterminate.gif" />
+    <Content Include="plugins\kendo\Bootstrap\loading-image.gif" />
+    <Content Include="plugins\kendo\Bootstrap\loading.gif" />
+    <Content Include="plugins\kendo\Bootstrap\loading_2x.gif" />
+    <Content Include="plugins\kendo\Bootstrap\markers.png" />
+    <Content Include="plugins\kendo\Bootstrap\markers_2x.png" />
+    <Content Include="plugins\kendo\Bootstrap\slider-h.gif" />
+    <Content Include="plugins\kendo\Bootstrap\slider-v.gif" />
+    <Content Include="plugins\kendo\Bootstrap\sprite.png" />
+    <Content Include="plugins\kendo\Bootstrap\sprite_2x.png" />
+    <Content Include="plugins\kendo\Bootstrap\sprite_kpi.png" />
+    <Content Include="plugins\kendo\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="plugins\kendo\Bootstrap\sprite_version01.png" />
+    <Content Include="plugins\kendo\Bootstrap\sprite_version02.png" />
+    <Content Include="plugins\kendo\jszip-2.5.0.min.js" />
+    <Content Include="plugins\kendo\kendo.all-2016.1.112.min.js" />
+    <Content Include="plugins\kendo\kendo.all.min.js" />
+    <Content Include="plugins\kendo\kendo.bootstrap.css" />
+    <Content Include="plugins\kendo\kendo.bootstrap.min.css" />
+    <Content Include="plugins\kendo\kendo.common-bootstrap.css" />
+    <Content Include="plugins\kendo\kendo.common-bootstrap.min.css" />
+    <Content Include="plugins\kendo\kendo.common.bootstrap.css" />
+    <Content Include="plugins\kendo\kendo.crm.css" />
+    <Content Include="plugins\kendo\kendo.silver.min.css" />
+    <Content Include="plugins\kendo\pako_deflate-1.0.1.min.js" />
+    <Content Include="plugins\mask\jquery.inputmask.bundle-3.3.5.js" />
+    <Content Include="plugins\mask\jquery.mask-1.14.0.js" />
+    <Content Include="plugins\mask\jquery.mask-1.14.0.min.js" />
+    <Content Include="plugins\mask\jquery.mask-1.14.10.min.js" />
+    <Content Include="plugins\moment\moment-2.11.1-holidays.min.js" />
+    <Content Include="plugins\moment\th.js" />
+    <Content Include="plugins\nice-select\jquery.nice-select.js" />
+    <Content Include="plugins\nice-select\jquery.nice-select.min.js" />
+    <Content Include="plugins\nice-select\nice-select.css" />
+    <Content Include="plugins\prettydropdowns\jquery.prettydropdowns.js" />
+    <Content Include="plugins\prettydropdowns\prettydropdowns.css" />
+    <Content Include="plugins\sweetalert\sweetalert-dev.js" />
+    <Content Include="plugins\sweetalert\sweetalert.css" />
+    <Content Include="plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="scripts\default.js" />
+    <Content Include="scripts\holiday.js" />
+    <Content Include="scripts\utils.js" />
+    <Content Include="styles\animate.min.css" />
+    <Content Include="styles\default.css" />
+    <Content Include="styles\fonts\font-awesome-4.5.0.min.css" />
+    <Content Include="styles\fonts\font-awesome-4.6.3.css" />
+    <Content Include="styles\fonts\font-awesome-4.6.3.min.css" />
+    <Content Include="styles\fonts\font-awesome-4.7.0.css" />
+    <Content Include="styles\fonts\font-awesome-4.7.0.min.css" />
+    <Content Include="styles\fonts\font-awesome-ie7.min.css" />
+    <Content Include="styles\fonts\ionicons-2.0.1.min.css" />
+    <Content Include="styles\fonts\open-sans.css" />
+    <Content Include="styles\reset.css" />
+    <Content Include="test\data\data.js" />
+    <Content Include="test\project.aspx" />
+    <Content Include="test\scripts\project.js" />
+    <Content Include="test\styles\default.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bases\LoginPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bases\MasterPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bases\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\EquityController.cs" />
+    <Compile Include="Controllers\HiportController.cs" />
+    <Compile Include="Controllers\DeltaController.cs" />
+    <Compile Include="Controllers\PerformanceController.cs" />
+    <Compile Include="Controllers\PFController.cs" />
+    <Compile Include="Controllers\PVDController.cs" />
+    <Compile Include="Controllers\UtilityController.cs" />
+    <Compile Include="Controllers\LimitController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Index.cs" />
+    <Compile Include="Models\CounterpartyTier.cs" />
+    <Compile Include="Models\DynamicEntity.cs" />
+    <Compile Include="Models\BenchmarkWeight.cs" />
+    <Compile Include="Models\IndexReturn.cs" />
+    <Compile Include="Models\PFUploadReturn.cs" />
+    <Compile Include="Models\PortfolioBenchmark.cs" />
+    <Compile Include="Models\FundFactSheet.cs" />
+    <Compile Include="Models\PortfolioPerformanceReport.cs" />
+    <Compile Include="Models\PVDUploadReturn.cs" />
+    <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\EquityDelta.cs" />
+    <Compile Include="Models\EquityNoSector.cs" />
+    <Compile Include="Models\CounterpartyLimitReport.cs" />
+    <Compile Include="Models\LiquidityLimitReport.cs" />
+    <Compile Include="Models\Hiport.cs" />
+    <Compile Include="Models\Limit.cs" />
+    <Compile Include="Models\FundAssetClass.cs" />
+    <Compile Include="Models\Fund.cs" />
+    <Compile Include="Models\EquityLimitReport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Authentication\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Utilities\DataUtil.cs" />
+    <Compile Include="Utilities\JsonConverters\JsonBooleanConverter.cs" />
+    <Compile Include="Utilities\JsonConverters\JsonDateTimeConverter.cs" />
+    <Compile Include="Utilities\MyExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Default.Master" />
+    <Content Include="plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.less" />
+    <Content Include="plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.scss" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select-1.10.0.css.map" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select-1.10.0.js.map" />
+    <Content Include="plugins\bootstrap-toggle\bootstrap-toggle-2.2.0.min.js.map" />
+    <Content Include="plugins\kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="plugins\kendo\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="plugins\kendo\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
+    <Content Include="fonts\social-share-kit.eot" />
+    <Content Include="fonts\social-share-kit.ttf" />
+    <Content Include="fonts\social-share-kit.woff" />
+    <Content Include="plugins\bootstrap\bootstrap-4.0.0.js.map" />
+    <Content Include="plugins\bootstrap\bootstrap-4.0.0.min.js.map" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-grid.css.map" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-grid.min.css.map" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-reboot.css.map" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap-reboot.min.css.map" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap.css.map" />
+    <Content Include="plugins\bootstrap\4.0.0\bootstrap.min.css.map" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-brands-400.eot" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-brands-400.ttf" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-brands-400.woff" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-brands-400.woff2" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-regular-400.eot" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-regular-400.ttf" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-regular-400.woff" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-regular-400.woff2" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-solid-900.eot" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-solid-900.ttf" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-solid-900.woff" />
+    <Content Include="fonts\fontawesome5\webfonts\fa-solid-900.woff2" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54906</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54906/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

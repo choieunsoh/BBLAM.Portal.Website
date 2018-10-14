@@ -1,0 +1,22 @@
+﻿.chart-container {
+    margin-top: 0;
+}
+.chart-container .row {
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.chart-container .row .col-lg-6 {
+    padding: 5px;
+}
+.chart2 {
+    border: silver solid 1px;
+    height: 500px;
+}
+.text-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+}
+.navbar-crm { display: none; }
+#main { margin-top: 0; }

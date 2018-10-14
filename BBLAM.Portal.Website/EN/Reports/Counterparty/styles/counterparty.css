@@ -1,0 +1,85 @@
+﻿td.col-remark {
+    color: #f00 !important;
+}
+div.th-trans {
+    padding: 5px;
+    font-size: 1.2em;
+}
+div.th-cp {
+    padding: 5px;
+    font-size: 1.2em;
+}
+div.th-title {
+    padding: 5px;
+}
+.report-title {
+    font-weight: bold;
+    color: #002080;
+    border-bottom: 1px solid #002db3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+}
+.report-title > div {
+    height: 30px;
+    vertical-align: bottom;
+    display: inline;
+}
+.report-title > button {
+    right: 15px;
+    top: -5px;
+    position: absolute;
+}
+.grid-xs {
+    margin-bottom: 10px;
+}
+.dialog-xlg .modal-dialog {
+    width: 50%;
+}
+
+div[data-trans="F"] th.k-header {
+    background-color: #3851af !important;
+    color: #fff;
+}
+div[data-trans="D"] th.k-header {
+    background-color: #38af5b !important;
+    color: #fff;
+}
+div[data-cp="N"] th.k-header {
+    background-color: #cd0013 !important;
+    color: #fff;
+}
+
+th.k-header a.k-link {
+    color: #fff !important;
+}
+thead.k-grid-header > tr:last-child > th.k-header, .k-grid-header thead > tr:last-child > th.k-header, thead.k-grid-header > tr > th[rowspan].k-header, .k-grid-header thead > tr > th[rowspan].k-header, thead.k-grid-header > tr > th[data-field].k-header, .k-grid-header thead > tr > th[data-field].k-header {
+    border-bottom: 3px #fff solid;
+}
+
+/*========== BOOTSTRAP ==========*/
+/* http://getbootstrap.com/css/#grid */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media only screen and (max-width: 767px) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+@media (max-width:1920px) {
+}
+
+@media (max-width:1450px) {
+}

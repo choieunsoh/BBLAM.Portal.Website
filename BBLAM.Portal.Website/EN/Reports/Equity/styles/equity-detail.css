@@ -1,0 +1,21 @@
+﻿.type-header {
+    font-weight: bold;
+}
+.type-data {
+    padding-left: 15px;
+}
+.error-data {
+    color: #f00;
+}
+a.open-nosector-dialog, a.open-nosector-dialog:link, a.open-nosector-dialog:valid {
+    color: #f00;
+}
+a.open-nosector-dialog:hover {
+    color: #f60;
+}
+.dialog-xlg .modal-dialog {
+    width: 60%;
+}
+.chart {
+    margin-bottom: 5px;
+}

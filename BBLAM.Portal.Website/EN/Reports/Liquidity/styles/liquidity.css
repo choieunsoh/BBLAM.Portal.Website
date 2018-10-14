@@ -1,0 +1,36 @@
+﻿.row-req-limit > td.col-remark { 
+    color: #f00 !important; 
+}
+.row-hard-limit > td {
+    background: #f00 !important;
+    color: #ff0 !important;
+}
+.row-soft-limit > td {
+    background: #ff0 !important;
+    color: #f00 !important;
+}
+
+/*========== BOOTSTRAP ==========*/
+/* http://getbootstrap.com/css/#grid */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media only screen and (max-width: 767px) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+@media (max-width:1920px) {
+}
+
+@media (max-width:1450px) {
+}

@@ -1,0 +1,165 @@
+﻿ body {
+  padding-top: 90px;
+      overflow-x: hidden;
+}
+/*body{color:#333;padding:0!important;margin:0!important;direction:"ltr";font-size:13px}
+@-ms-viewport{width:device-width}@-o-viewport{width:device-width}@viewport{width:device-width}@-ms-viewport{width:auto!important}
+*/
+#content-wrapper
+{
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+a, a:visited { 
+    color: #277500;
+    text-decoration: none; 
+}
+a:focus, a:hover { 
+    color: #029201;
+    text-decoration: underline;
+}
+a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, 
+.has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, 
+.has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+    color: #FF0000;font-size: 13px;
+}
+.has-error .form-control {
+    border-color: #FF0000;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+/*------------------------------------*
+Font-Style
+*------------------------------------*/
+.text-bold { font-weight: 600; }
+.text-italic { font-style: italic; }
+.text-normal { font-style: normal; font-weight: normal; }
+
+
+
+
+
+
+
+.control-label { font-size:13px;font-weight: 500;}
+.control-label2 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+
+/*------------------------------------*
+Padding
+*------------------------------------*/
+.pad-checkbox{padding-top: 7px;padding-right: 7PX;}
+.pad-0 { padding: 0 !important;}
+.pad-10 { padding: 10px !important;}
+.pad-15 { padding: 15px !important;}
+.pad-20 { padding: 20px !important;}
+.pad-top-20 {padding-top: 20px !important;}
+.pbn, .pvn, .pan {padding-bottom: 0 !important;}
+.prn, .phn, .pan { padding-right: 0 !important;}
+.ptn, .pvn, .pan { padding-top: 0 !important;}
+.pr20{padding-right: 20px !important;}
+
+/*------------------------------------*
+Margin
+*------------------------------------*/
+.mb20 {margin-bottom: 20px;}
+.mb0 {margin-bottom: 0px !important;}
+.mt20 {margin-top: 20px;}
+.mt50 {margin-top: 50px;}
+
+/*------------------------------------*
+Border
+*------------------------------------*/
+
+.bor0 {border-width: 0px !important;}
+.bor-rad{border-radius: 8px !important;}
+
+.symbol { font-weight: bold; text-transform: uppercase; }
+.issuer-code { font-weight: bold; }
+
+
+/* Tab */
+.nav-tabs li a {
+    color: #555;
+}
+.nav-tabs li.active a,
+.nav-tabs li.active a:hover {
+    color: #277500;
+}
+
+.form-inline .form-group {
+    width: 100%;
+    /*border: 1px solid darkgreen;*/
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.form-inline > .form-group .control-label {
+    margin-right: 5px;
+}
+
+/* Width */
+.col-2-5, .col-5, .col-7-5, .col-10, .col-15, .col-20, .col-25, .col-30, .col-35, .col-40, .col-45, .col-50, .col-100 {
+    position: relative;
+    min-height: 1px;
+}
+.col-2-5 { width: 2.5%; }
+.col-5 { width: 5%; }
+.col-7-5 { width: 7.5%; }
+.col-10 { width: 10%; }
+.col-15 { width: 15%; }
+.col-20 { width: 20%; }
+.col-25 { width: 25%; }
+.col-30 { width: 30%; }
+.col-35 { width: 35%; }
+.col-40 { width: 40%; }
+.col-45 { width: 45%; }
+.col-50 { width: 50%; }
+.col-100 { width: 100%; }
+
+.input-group.date.col-15 {
+    min-width: 180px;
+    width: 180px;
+}
+.input-group.date.select-year-dl {
+    min-width: 192px;
+    width: 192px;
+}
+.input-group.date.daterange {
+    min-width: 250px;
+    width: 250px;
+}
+.form-group .valign-label label.control-label {
+    margin-top: 8px;
+}
+
+.chart {
+    /*background: 98% 80% no-repeat url('/images/chart-logo-text-gray.png');*/
+}
+
+/* Form */
+.bg-form { 
+    background-color: #f5f5f5;
+    border: 1px dotted #ccc;
+    display: block;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+.bg-form .row {
+    padding: 0 10px;
+}
+.bg-form .form-horizontal .form-group {
+    min-height: 36px;
+}
