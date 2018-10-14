@@ -4,6 +4,9 @@
 .dialog-xlg .modal-dialog {
     width: 70%;
 }
+.dialog-lg .modal-dialog {
+    width: 50%;
+}
 
 /* File */
 .k-upload-selected {

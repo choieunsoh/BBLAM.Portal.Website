@@ -106,9 +106,20 @@
                 <div class="col-xs-12">
                     <div class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-xs-4 control-label">NAV/Unit :</label>
+                            <label class="col-xs-4 control-label">Daily Return :</label>
 				            <div class="col-xs-8">		
-					            <input type="text" class="form-control" data-field="nav_per_unit" maxlength="20" placeholder="Enter nav per unit"   />
+					            <input type="text" class="form-control return" data-field="daily_return" maxlength="20" placeholder="Enter daily return"   />
+				            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-4 control-label">YTD Return :</label>
+				            <div class="col-xs-8">		
+					            <input type="text" class="form-control return" data-field="ytd_return" maxlength="20" placeholder="Enter ytd return"   />
 				            </div>
                         </div>
                     </div>
@@ -124,10 +135,10 @@
                 <div class="col-xs-12">
                     <div class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-xs-4 control-label">PF Return XLSX, XLS File :</label>
+                            <label class="col-xs-4 control-label">PF Return XLSX File :</label>
 				            <div class="col-xs-8">		
                                 <input name="files" id="files" type="file" />
-                                <small class="text-muted col-xs-12">Allow .XLSX, .XLS file to be uploaded (maximum size: 1MB).</small>
+                                <small class="text-muted col-xs-12">Allow .XLSX file to be uploaded (maximum size: 1MB).</small>
 				            </div>
                         </div>
                     </div>
@@ -138,7 +149,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
 <pre class="code">
-    <code>.XLSX, .XLS File Format:</code>
+    <code>.XLSX File Format:</code>
     <code></code>
     <code>"รหัสกองทุน","ชื่อกองทุน","สินทรัพย์สุทธิ	","อัตราผลตอบแทนต่อวัน (%)","อัตราผลตอบแทนสะสม (%)"</code>
     <code>"XXX","XXXXX","0.00","0.000000000000","0.000000000000"</code>

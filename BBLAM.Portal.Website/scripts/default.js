@@ -297,7 +297,7 @@ $.App.ui = {
             var hasid = $c.data('id');
             if (!hasid) {
                 if (type == 'datetime') {
-                    o[$c.data('field')] = moment($c.parent().data("DateTimePicker").date());
+                    o[$c.data('field')] = moment($c.parent().data("DateTimePicker").date()).startOf('day');
                 } else if (type == 'mask') {
                     o[$c.data('field')] = $c.cleanVal();
                 } else {

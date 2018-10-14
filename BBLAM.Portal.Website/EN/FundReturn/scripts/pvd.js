@@ -163,7 +163,7 @@
                 $message.find('[data-field=nav_per_unit]').inputmask({//'9[9][9][.999999999999]', {
                     alias: 'decimal',
                     digits: 12,
-                    integerDigits: 2,
+                    allowMinus: false,
                     groupSeparator: ',',
                     autoGroup: true,
                 }).css({ 'text-align': 'left' });

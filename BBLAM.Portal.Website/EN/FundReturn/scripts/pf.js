@@ -14,7 +14,8 @@
 
         var dialog = null;
         BootstrapDialog.show({
-            title: 'Upload PF Return Text File',
+            title: 'Upload PF Return Excel File',
+            cssClass: 'dialog-lg',
             closable: false,
             message: function (dialogRef) {
                 var $message = $('#uploadDialog > div').clone();
@@ -41,7 +42,7 @@
                         var validateOptions = $.extend(true, {}, kendoUtility.upload.validationConfig);
                         validateOptions.allowedExtensions = [];
                         validateOptions = $.extend(true, validateOptions, {
-                            allowedExtensions: ['.xlsx', '.xls'],
+                            allowedExtensions: ['.xlsx'],
                             accumulateSize: false,
                             maxFiles: 1,
                             maxFileSize: 1024 * 1024 * 1,
@@ -103,14 +104,14 @@
                     if (upload) {
                         var totalFiles = upload.element.context.files.length;
                         if (totalFiles > 0) {
-                            $.App.ui.dialog.confirm('Are you sure you want to upload \'PF Return Text File\' ?', function (result) {
+                            $.App.ui.dialog.confirm('Are you sure you want to upload \'PF Return Excel File\' ?', function (result) {
                                 if (result) {
                                     dialog = dialogRef;
                                     $files.closest('.k-upload').find('.k-upload-selected').trigger('click');
                                 }
                             });
                         } else {
-                            $.App.ui.dialog.alert('Please select at least one \'PF Return Text File\' file before upload.');
+                            $.App.ui.dialog.alert('Please select at least one \'PF Return Excel File\' file before upload.');
                         }
                     }
                 }
@@ -160,10 +161,9 @@
                     autoGroup: true,
                 }).css({ 'text-align': 'left' });
 
-                $message.find('[data-field=nav_per_unit]').inputmask({//'9[9][9][.999999999999]', {
+                $message.find('.return').inputmask({
                     alias: 'decimal',
                     digits: 12,
-                    integerDigits: 2,
                     groupSeparator: ',',
                     autoGroup: true,
                 }).css({ 'text-align': 'left' });
@@ -218,11 +218,19 @@
                                     },
                                 },
                             },
-                            dialogNavPerUnit: {
-                                selector: '[data-field=nav_per_unit]',
+                            dialogDailyReturn: {
+                                selector: '[data-field=daily_return]',
                                 validators: {
                                     notEmpty: {
-                                        message: 'Please enter nav per unit.',
+                                        message: 'Please enter daily return.',
+                                    },
+                                },
+                            },
+                            dialogYTDReturn: {
+                                selector: '[data-field=ytd_return]',
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Please enter ytd return.',
                                     },
                                 },
                             },
@@ -400,14 +408,16 @@ function setupGrid() {
         }, {
             attributes: { 'class': 'text-right' },
             field: 'daily_return',
-            format: '{0:N12}',
+            //format: '{0:N12}',
             title: 'Daily Return',
+            template: '#= daily_return ? daily_return.toChangeColor("{0:N12}") : "" #',
             width: 100,
         }, {
             attributes: { 'class': 'text-right' },
             field: 'ytd_return',
-            format: '{0:N12}',
+            //format: '{0:N12}',
             title: 'YTD Return',
+            template: '#= ytd_return ? ytd_return.toChangeColor("{0:N12}") : "" #',
             width: 100,
         }, {
             attributes: { 'class': 'text-center' },

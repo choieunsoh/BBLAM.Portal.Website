@@ -45,11 +45,12 @@ namespace BBLAM.Portal.Controllers
         {
             try
             {
-                string usp = "__usp_Perf_GetPfReturn";
+                string usp = "PF_PERF_REPORT.GetPFReturn";
                 OracleParameter[] p = new OracleParameter[] {
-                    new OracleParameter("@From", from),
-                    new OracleParameter("@To", to),
-                    new OracleParameter("@PortCode", port_code ?? ""),
+                    new OracleParameter("P_START_DATE", from),
+                    new OracleParameter("P_END_DATE", to),
+                    new OracleParameter("P_PORT_CODE", port_code ?? ""),
+                    new OracleParameter("P_RESULT", OracleDbType.RefCursor, ParameterDirection.Output)
                 };
                 var list = System.Data.DataUtil.ExecuteList<PFUploadReturn>(CONN, usp, PFUploadReturn.FillObject, p);
                 return Ok(list);
@@ -68,15 +69,15 @@ namespace BBLAM.Portal.Controllers
         {
             try
             {
-                string usp = "__usp_Perf_SavePfReturn";
+                string usp = "PF_PERF_REPORT.SavePFReturn";
                 OracleParameter[] p = new OracleParameter[] {
-                    new OracleParameter("@PortCode", req.PortfolioCode),
-                    new OracleParameter("@Asof", req.Asof),
-                    new OracleParameter("@TotalNav", req.TotalNav),
-                    new OracleParameter("@DailyReturn", req.DailyReturn),
-                    new OracleParameter("@YtdReturn", req.YTDReturn),
-                    new OracleParameter("@UpdatedBy", this.UserName),
-                    new OracleParameter("@UpdatedSource", this.GetClientIP()),
+                    new OracleParameter("P_ASOF", req.Asof),
+                    new OracleParameter("P_PORT_CODE", req.PortfolioCode),
+                    new OracleParameter("P_TOTAL_NAV", req.TotalNav),
+                    new OracleParameter("P_DAILY_RETURN", req.DailyReturn),
+                    new OracleParameter("P_YTD_RETURN", req.YTDReturn),
+                    new OracleParameter("P_UPDATED_BY", this.UserName),
+                    new OracleParameter("P_UPDATED_SOURCE", this.GetClientIP()),
                 };
                 var list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp, p);
                 return Ok(list);
@@ -109,20 +110,17 @@ namespace BBLAM.Portal.Controllers
                         {
                             try
                             {
-                                /*string usp = "DELTA.SaveEquityDelta";
+                                string usp = "PF_PERF_REPORT.SavePFReturn";
                                 OracleParameter[] p = new OracleParameter[] {
                                     new OracleParameter("P_ASOF", OracleDbType.Date, col.Select(x => x.Asof).ToArray(), ParameterDirection.Input),
-                                    new OracleParameter("P_STOCK_NAME", OracleDbType.Varchar2, col.Select(x => x.StockName).ToArray(), ParameterDirection.Input),
-                                    new OracleParameter("P_MASTER_STOCK", OracleDbType.Varchar2, col.Select(x => x.MasterStock).ToArray(), ParameterDirection.Input),
-                                    new OracleParameter("P_DELTA", OracleDbType.Double, col.Select(x => x.Delta).ToArray(), ParameterDirection.Input),
+                                    new OracleParameter("P_PORT_CODE", OracleDbType.Varchar2, col.Select(x => x.PortfolioCode).ToArray(), ParameterDirection.Input),
+                                    new OracleParameter("P_TOTAL_NAV", OracleDbType.Double, col.Select(x => x.TotalNav).ToArray(), ParameterDirection.Input),
+                                    new OracleParameter("P_DAILY_RETURN", OracleDbType.Double, col.Select(x => x.DailyReturn).ToArray(), ParameterDirection.Input),
+                                    new OracleParameter("P_YTD_RETURN", OracleDbType.Double, col.Select(x => x.YTDReturn).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_UPDATED_BY", OracleDbType.Varchar2, col.Select(x => x.UpdatedBy).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_UPDATED_SOURCE", OracleDbType.Varchar2, col.Select(x => x.UpdatedSource).ToArray(), ParameterDirection.Input),
                                 };
-                                var list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp, col.Count, p);*/
-                                foreach (var o in col)
-                                {
-                                    SavePfReturn(o);
-                                }
+                                var list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp, col.Count, p);
                                 success = true;
                             }
                             catch (Exception ex)
@@ -132,7 +130,7 @@ namespace BBLAM.Portal.Controllers
                         }
                         #endregion
 
-                        #region Delete CSV
+                        #region Delete Excel
                         try
                         {
                             File.Delete(filepath);
@@ -157,10 +155,10 @@ namespace BBLAM.Portal.Controllers
         {
             try
             {
-                string usp = "__usp_Perf_DeletePfReturn";
+                string usp = "PF_PERF_REPORT.DeletePFReturn";
                 OracleParameter[] p = new OracleParameter[] {
-                    new OracleParameter("@Asof", req.Asof),
-                    new OracleParameter("@PortCode", req.PortfolioCode),
+                    new OracleParameter("P_ASOF", req.Asof),
+                    new OracleParameter("P_PORT_CODE", req.PortfolioCode),
                 };
                 var list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp, p);
                 return Ok(list);
@@ -362,6 +360,7 @@ namespace BBLAM.Portal.Controllers
 
                         try
                         {
+                            string clientip = this.GetClientIP();
                             for (int i = 5; i < worksheet.Rows.Count; i++)
                             {
                                 PFUploadReturn obj = new PFUploadReturn();
@@ -383,6 +382,9 @@ namespace BBLAM.Portal.Controllers
                                 // YTD Return
                                 cell = worksheet.Cells[i, 6].GetValue();
                                 obj.YTDReturn = cell.Value.RawValue.ToDouble();
+
+                                obj.UpdatedBy = this.UserName;
+                                obj.UpdatedSource = clientip;
 
                                 col.Add(obj);
                             }
