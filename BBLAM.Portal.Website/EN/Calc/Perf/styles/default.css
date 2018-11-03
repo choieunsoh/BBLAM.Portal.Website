@@ -1,0 +1,166 @@
+﻿.dialog-wide .modal-dialog {
+    width: 80%;
+}
+.dialog-xlg .modal-dialog {
+    width: 70%;
+}
+
+/* File */
+.k-upload-selected {
+    display: none !important;
+}
+
+.k-upload-files {
+    margin-top: 5px;
+    border: none;
+}
+
+.k-file-extension-wrapper, .k-multiple-files-extension-wrapper {
+    color: #cbcbcf;
+    border-color: #cbcbcf;
+}
+
+.k-file-extension-wrapper, .k-file-invalid-extension-wrapper, .k-multiple-files-extension-wrapper, .k-multiple-files-invalid-extension-wrapper {
+    position: relative;
+    width: 24px;
+    height: 34px;
+    border-width: 2px;
+    border-style: solid;
+    vertical-align: top;
+    font-size: .57em;
+    text-transform: uppercase;
+}
+
+.k-file-extension-wrapper, .k-file-invalid-extension-wrapper, .k-file-name-size-wrapper, .k-multiple-files-extension-wrapper, .k-multiple-files-invalid-extension-wrapper {
+    display: inline-block;
+}
+
+.k-file-extension {
+    /*font-size: 0.8em;*/
+    margin-left: .4em;
+    margin-bottom: .3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.k-file-extension-wrapper::before, .k-multiple-files-extension-wrapper::before {
+    background-color: #fff;
+    border-color: transparent transparent #cbcbcf #cbcbcf;
+}
+
+.k-file-extension-wrapper::before, .k-file-invalid-extension-wrapper::before, .k-multiple-files-extension-wrapper::before, .k-multiple-files-invalid-extension-wrapper::before {
+    top: -1px;
+    right: -1px;
+    width: 0px;
+    height: 0px;
+    border-width: 6px;
+    margin-top: -1px;
+    margin-right: -1px;
+}
+
+.k-file-extension-wrapper::before, .k-file-invalid-extension-wrapper::before, .k-multiple-files-extension-wrapper::after, .k-multiple-files-extension-wrapper::before, .k-multiple-files-invalid-extension-wrapper::after, .k-multiple-files-invalid-extension-wrapper::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border-style: solid;
+}
+
+.k-file-extension, .k-file-invalid-icon {
+    position: absolute;
+    bottom: 0;
+    line-height: normal;
+}
+
+.k-file-state {
+    visibility: hidden;
+}
+
+.k-animation-container, .k-animation-container *, .k-animation-container ::after, .k-block .k-header, .k-list-container, .k-widget, .k-widget *, .k-widget ::before, div.k-window-content {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.k-file-name-size-wrapper {
+    vertical-align: middle;
+    margin-left: 1em;
+}
+
+.k-file-extension-wrapper, .k-file-invalid-extension-wrapper, .k-file-name-size-wrapper, .k-multiple-files-extension-wrapper, .k-multiple-files-invalid-extension-wrapper {
+    display: inline-block;
+}
+
+.k-animation-container, .k-animation-container *, .k-animation-container ::after, .k-block .k-header, .k-list-container, .k-widget, .k-widget *, .k-widget ::before, div.k-window-content {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.k-file-name, .k-file-size {
+    position: relative;
+    min-width: 10em;
+    max-width: 100%;
+    vertical-align: middle;
+    line-height: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.k-animation-container, .k-animation-container *, .k-animation-container ::after, .k-block .k-header, .k-list-container, .k-widget, .k-widget *, .k-widget ::before, div.k-window-content {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.k-file-information, .k-file-size, .k-file-validation-message {
+    color: #999 !important;
+}
+
+.k-file-size {
+    line-height: 1.2em;
+}
+
+.k-file-information, .k-file-size, .k-file-validation-message {
+    font-size: 0.78em;
+    line-height: 1.5em;
+}
+
+.k-file-information, .k-file-name, .k-file-size, .k-file-validation-message {
+    display: block;
+}
+
+.k-file-mark-to-delete {
+    color: #f00;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.mark-to-delete .k-progress {
+    background-color: #adadad;
+}
+
+.mark-to-delete .k-file-extension-wrapper::before,
+.mark-to-delete .k-multiple-files-extension-wrapper::before {
+    background-color: #adadad;
+    border-color: transparent transparent #cbcbcf #cbcbcf;
+}
+
+.k-dropzone {
+    padding: 0;
+}
+.k-dropzone em {
+    display: none;
+}
+
+.k-edit-cell .k-input {
+
+}
+
+.dialog-num {
+    text-align: left !important;
+}
+
+.k-multicheck-wrap label {
+}
+.k-multicheck-wrap label span {
+    margin-left: 10px;
+}

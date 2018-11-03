@@ -347,6 +347,8 @@ function setupGrid() {
 
                         total_nav: { type: 'number', },
                         nav_per_unit: { type: 'number', },
+                        mtd_return: { type: 'number', },
+                        ytd_return: { type: 'number', },
                     }
                 }
             },
@@ -401,6 +403,18 @@ function setupGrid() {
             field: 'nav_per_unit',
             format: '{0:N12}',
             title: 'NAV/Unit',
+            width: 100,
+        }, {
+            attributes: { 'class': 'text-right' },
+            field: 'mtd_return',
+            title: 'MTD Return',
+            template: '#= mtd_return ? mtd_return.toChangeColor("{0:N12}") : "" #',
+            width: 100,
+        }, {
+            attributes: { 'class': 'text-right' },
+            field: 'ytd_return',
+            title: 'YTD Return',
+            template: '#= ytd_return ? ytd_return.toChangeColor("{0:N12}") : "" #',
             width: 100,
         }, {
             attributes: { 'class': 'text-center' },

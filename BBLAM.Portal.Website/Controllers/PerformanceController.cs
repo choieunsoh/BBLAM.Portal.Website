@@ -197,8 +197,18 @@ namespace BBLAM.Portal.Controllers
                     new OracleParameter("P_REPORT_DATE", report_date),
                     new OracleParameter("P_RESULT", OracleDbType.RefCursor, ParameterDirection.Output)
                 };
-                var list = System.Data.DataUtil.ExecuteList<MonthlyFundFactSheetSummary>(CONN, usp, MonthlyFundFactSheetSummary.FillObject, p);
-                return Ok(list);
+
+                if (fund_type == "MF")
+                {
+                    var list1 = System.Data.DataUtil.ExecuteList<MonthlyFundFactSheetSummary>(CONN, usp, MonthlyFundFactSheetSummary.FillObject, p);
+                    return Ok(list1);
+                }
+                else if (fund_type == "PVD")
+                {
+                    var list2 = System.Data.DataUtil.ExecuteList<PVDMonthlyFundFactSheetSummary>(CONN, usp, PVDMonthlyFundFactSheetSummary.FillObject, p);
+                    return Ok(list2);
+                }
+                return Ok(0);
             }
             catch (Exception ex)
             {
@@ -408,6 +418,28 @@ namespace BBLAM.Portal.Controllers
 
         #endregion
 
+        #region GeneratePortSimNav
+        [HttpGet, Route("port-bm/gen-sim-nav")]
+        public IHttpActionResult GeneratePortSimNav(string port_code, DateTime? start_date)
+        {
+            try
+            {
+                string usp = "MF_PERF_REPORT.CalcPortSimulatedNavByPort";
+                OracleParameter[] p = new OracleParameter[] {
+                    new OracleParameter("P_ASOF", start_date),
+                    new OracleParameter("P_PORT_CODE", port_code),
+                };
+                var list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp, p);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                throw ThrowException(ex);
+            }
+        }
+
+        #endregion
+
         #endregion
 
         #region Benchmark
@@ -590,6 +622,54 @@ namespace BBLAM.Portal.Controllers
 
             // Return an empty string to signify success
             return Ok("");
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Benchmark Return
+        #region CalcBenchmarkReturn
+        [HttpGet, Route("bm-ret/calc")]
+        public IHttpActionResult CalcBenchmarkReturn(DateTime start_date, DateTime end_date, string bm_code)
+        {
+            try
+            {
+                
+                string usp = "MF_PERF_REPORT.CalcBenchmarkReturnAll";
+                OracleParameter[] p = new OracleParameter[] {
+                    new OracleParameter("P_START_DATE", start_date),
+                    new OracleParameter("P_END_DATE", end_date),
+                    new OracleParameter("P_BM_CODE", bm_code ?? ""),
+                };
+                var list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp, p);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                throw ThrowException(ex);
+            }
+        }
+
+        #endregion
+
+        #region GetCalcBenchmarkReturnAvailableDate
+        [HttpGet, Route("bm-ret/calc-avail")]
+        public IHttpActionResult GetCalcBenchmarkReturnAvailableDate()
+        {
+            try
+            {
+                string usp = "MF_PERF_REPORT.GetCalcBenchmarkReturnDate";
+                OracleParameter[] p = new OracleParameter[] {
+                    new OracleParameter("P_RESULT", OracleDbType.RefCursor, ParameterDirection.Output)
+                };
+                var list = System.Data.DataUtil.ExecuteList<DateTime>(CONN, usp, null, p);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                throw ThrowException(ex);
+            }
         }
 
         #endregion
@@ -968,12 +1048,12 @@ namespace BBLAM.Portal.Controllers
                                     .Select(o => new { IndexCode = o.Key, Asof = o.Min(x => x.Asof) })
                                     .ToList();
 
-                                string usp1 = "MF_PERF_REPORT.CalcPortBenchmarkReturn";
+                                /*string usp1 = "MF_PERF_REPORT.CalcPortBenchmarkReturn";
                                 OracleParameter[] p1 = new OracleParameter[] {
                                     new OracleParameter("P_ASOF", OracleDbType.Date, result.Select(x => x.Asof).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_INDEX_CODE", OracleDbType.Varchar2, result.Select(x => x.IndexCode).ToArray(), ParameterDirection.Input),
                                 };
-                                list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp1, result.Count, p1);
+                                list = System.Data.DataUtil.ExecuteNonQuery(CONN, usp1, result.Count, p1);*/
 
                                 success = true;
                             }
@@ -1032,6 +1112,30 @@ namespace BBLAM.Portal.Controllers
 
         #endregion
 
+        #region PVD Report
+        #region GetPVDReturnSummaryByAsof
+        [HttpGet, Route("report/pvd-ret/summary")]
+        public IHttpActionResult GetPVDReturnSummaryByAsof(DateTime asof)
+        {
+            try
+            {
+                string usp = "PVD_PERF_REPORT.GetPortReturnSummaryByAsof";
+                OracleParameter[] p = new OracleParameter[] {
+                    new OracleParameter("P_ASOF", asof),
+                    new OracleParameter("P_RESULT", OracleDbType.RefCursor, ParameterDirection.Output)
+                };
+                var list = System.Data.DataUtil.ExecuteList<PVDMonthlyReturn>(CONN, usp, PVDMonthlyReturn.FillObject, p);
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                throw ThrowException(ex);
+            }
+        }
+
+        #endregion
+
+        #endregion
 
         #region Private Methods
 

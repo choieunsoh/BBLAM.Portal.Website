@@ -43,7 +43,7 @@ $(function () {
         e.preventDefault();
         setupGrid();
         return false;
-    })
+    });
 
 });
 
@@ -110,7 +110,7 @@ function setupGrid() {
             template: $("#template").html(),
         }],
         excel: {
-            fileName: kendoUtility.excelExport.createFileName(param_port + '_portfolio_performance', asof, asof_to),
+            fileName: kendoUtility.excelExport.createFileName(fund_code + '_portfolio_performance', asof, asof_to),
         },
         showTooltip: true,
         selectable: false,

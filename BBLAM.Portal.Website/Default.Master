@@ -114,8 +114,17 @@
 
                                 <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Performance/Default.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Portfolio Performance Report</a></li>
                                 <li class="divider"></li>
-                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/Default.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Monthly Fun Fact Sheet</a></li>
-                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/Summary.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Monthly Fun Fact Sheet Summary</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/Default.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Monthly Fund Fact Sheet</a></li>
+                                
+                                <li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-clipboard"></i> Monthly Fund Fact Sheet Summary</a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/Summary.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Mutual Fund</a></li>
+                                        <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/PVD/Summary.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Provident Fund</a></li>
+                                        <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/PF/Summary.aspx")%>"><i class="fa fa-fw fa-clipboard"></i> Private Fund</a></li>
+                                    </ul>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FactSheet/PVD/Return.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> PVD Return Summary</a></li>
                                 <li class="divider"></li>
                                 <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/IndexData.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Index Daily Return</a></li>
                                 <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/IndexSim.aspx")%>"><i class="fa fa-fw fa-line-chart"></i> Index Simulated Return</a></li>
@@ -136,6 +145,9 @@
                                 <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/IndexReturn.aspx")%>">Index Daily Return</a></li>
                                 <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/Portfolio.aspx")%>">Portfolio Benchmark Setting</a></li>
                                 <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/Benchmark/Weight.aspx")%>">Benchmark Component Setting</a></li>
+                                <li class="divider"></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FundReturn/PVD.aspx")%>">Import PVD Monthly Return</a></li>
+                                <li class="menu-li" ><a href="<% =ResolveUrl("~/EN/FundReturn/PF.aspx")%>">Import PF Monthly Return</a></li>
 
                             </ul>
                         </li>

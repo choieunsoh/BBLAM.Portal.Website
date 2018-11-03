@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBLAM.Portal.Website", "BBLAM.Portal.Website\BBLAM.Portal.Website.csproj", "{81E2943B-A0A1-4CA1-AD3C-75CA65B1B8B9}"
 EndProject
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {751A8A5D-05F8-4AEB-B398-83FE7BDE77B5}
+		SolutionGuid = {05301D0A-2897-4397-B0EA-A6D36FEF0C4F}
 	EndGlobalSection
 EndGlobal

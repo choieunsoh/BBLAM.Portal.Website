@@ -1,0 +1,31 @@
+﻿#grid .k-grid-content tbody tr.k-grouping-row:first-child,
+#grid .k-grid-content tbody tr.k-grouping-row:nth-child(2),
+#grid .k-grid-content tbody tr:nth-child(4),
+#grid .k-grid-content tbody tr:nth-child(5) {
+    display: none;
+}
+#grid .k-grid-content tbody tr:nth-child(3) > td {
+    font-weight: bold;
+    text-align: center;
+}
+#grid .k-grid-content tbody tr.k-group-footer > td,
+#grid .k-grid-footer tbody tr.k-footer-template > td {
+    font-weight: bold;
+    text-align: right;
+}
+
+.k-grid .k-group-col {
+    width: 15px;
+}
+.text-remark {
+    color: #f00 !important;
+}
+.row-asof .text-right {
+    text-align: center;
+    font-weight: bold;
+}
+.row-bm,
+.row-bm:hover {
+    background-color: yellow !important;
+    font-weight: bold;
+}

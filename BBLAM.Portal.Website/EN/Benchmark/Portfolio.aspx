@@ -118,6 +118,27 @@
             </form>
         </div>
     </div>
+    
+    <div id="calcDialog" class="hide">
+        <div class="row">
+            <form id="formCalc">
+                <div class="col-xs-12">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-4 control-label">Start Date :</label>
+                            <div class="col-xs-8">
+                                <div class="input-group date dialog-asof">
+                                    <input type="text" class="form-control lg-date" data-field="start_date" data-control="datetime" placeholder="Enter start date" />
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                </div>
+                                <small>Leave blank for re-generate starts from start date</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div id="uploadDialog" class="hide">
         <div class="row">

@@ -24,10 +24,16 @@ namespace BBLAM.Portal.Models
         public DateTime Asof { get; set; }
 
         [JsonProperty("total_nav")]
-        public double TotalNav { get; set; }
+        public double? TotalNav { get; set; }
 
         [JsonProperty("nav_per_unit")]
-        public double NavPerUnit { get; set; }
+        public double? NavPerUnit { get; set; }
+
+        [JsonProperty("mtd_return")]
+        public double? MTDReturn { get; set; }
+
+        [JsonProperty("ytd_return")]
+        public double? YTDReturn { get; set; }
 
         [JsonProperty("created_date")]
         public DateTime CreatedDate { get; set; }
@@ -56,8 +62,10 @@ namespace BBLAM.Portal.Models
             obj.PortfolioCode = reader.Field<string>("port_code");
             obj.Asof = reader.Field<DateTime>("asof");
             obj.AsofThai = obj.Asof.ToString("dd/MM/yyyy", CultureInfo.GetCultureInfo("th-TH"));
-            obj.TotalNav = reader.Field<double>("total_nav");
-            obj.NavPerUnit = reader.Field<double>("nav_per_unit");
+            obj.TotalNav = reader.Field<double?>("total_nav");
+            obj.NavPerUnit = reader.Field<double?>("nav_per_unit");
+            obj.MTDReturn = reader.Field<double?>("mtd_return");
+            obj.YTDReturn = reader.Field<double?>("ytd_return");
 
             obj.CreatedDate = reader.Field<DateTime>("created_date");
             obj.CreatedBy = reader.Field<string>("created_by");

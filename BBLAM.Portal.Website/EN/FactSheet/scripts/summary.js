@@ -240,7 +240,7 @@ function refreshData(regen) {
             parameterMap: function (data, type) {
                 return {
                     report_date: asof.format('YYYY-MM-DD'),
-                    fund_type: $.App.getFundType(),
+                    fund_type: 'MF',
                 };
             },
         },
@@ -382,7 +382,7 @@ function refreshAnnuallyData(regen) {
             parameterMap: function (data, type) {
                 return {
                     report_date: asof.format('YYYY-MM-DD'),
-                    fund_type: $.App.getFundType(),
+                    fund_type: 'MF',
                 };
             },
         },
@@ -442,7 +442,7 @@ function generateAllFunds() {
             $.ajax({
                 data: {
                     report_date: asof.format('YYYY-MM-DD'),
-                    fund_type: $.App.getFundType(),
+                    fund_type: 'MF',
                 },
                 url: rootapi + '/api/perf/report/gen-factsheet',
                 contentType: 'application/json; charset=utf-8',

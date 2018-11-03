@@ -72,6 +72,8 @@ namespace BBLAM.Portal.Controllers
                     new OracleParameter("P_PORT_CODE", req.PortfolioCode),
                     new OracleParameter("P_TOTAL_NAV", req.TotalNav),
                     new OracleParameter("P_NAV_PER_UNIT", req.NavPerUnit),
+                    new OracleParameter("P_MTD_RETURN", req.MTDReturn),
+                    new OracleParameter("P_YTD_RETURN", req.YTDReturn),
                     new OracleParameter("P_UPDATED_BY", this.UserName),
                     new OracleParameter("P_UPDATED_SOURCE", this.GetClientIP()),
                 };
@@ -122,6 +124,8 @@ namespace BBLAM.Portal.Controllers
                                     new OracleParameter("P_PORT_CODE", OracleDbType.Varchar2, col.Select(x => x.PortfolioCode).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_TOTAL_NAV", OracleDbType.Double, col.Select(x => x.TotalNav).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_NAV_PER_UNIT", OracleDbType.Double, col.Select(x => x.NavPerUnit).ToArray(), ParameterDirection.Input),
+                                    new OracleParameter("P_MTD_RETURN", OracleDbType.Double, col.Select(x => x.MTDReturn).ToArray(), ParameterDirection.Input),
+                                    new OracleParameter("P_YTD_RETURN", OracleDbType.Double, col.Select(x => x.YTDReturn).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_UPDATED_BY", OracleDbType.Varchar2, col.Select(x => x.UpdatedBy).ToArray(), ParameterDirection.Input),
                                     new OracleParameter("P_UPDATED_SOURCE", OracleDbType.Varchar2, col.Select(x => x.UpdatedSource).ToArray(), ParameterDirection.Input),
                                 };

@@ -159,6 +159,9 @@
     <Content Include="EN\Benchmark\Portfolio.aspx" />
     <Content Include="EN\Benchmark\scripts\portfolio.js" />
     <Content Include="EN\Benchmark\styles\default.css" />
+    <Content Include="EN\Calc\Perf\PortReturn.aspx" />
+    <Content Include="EN\Calc\Perf\scripts\port-return.js" />
+    <Content Include="EN\Calc\Perf\styles\default.css" />
     <Content Include="EN\Data\scripts\stock.js" />
     <Content Include="EN\Data\Stock.aspx" />
     <Content Include="EN\Data\Hiport.aspx" />
@@ -168,6 +171,12 @@
     <Content Include="EN\Data\styles\stock.css" />
     <Content Include="EN\Data\styles\delta.css" />
     <Content Include="EN\Data\styles\hiport.css" />
+    <Content Include="EN\FactSheet\PVD\scripts\return.js" />
+    <Content Include="EN\FactSheet\PVD\scripts\summary.js" />
+    <Content Include="EN\FactSheet\PVD\styles\return.css" />
+    <Content Include="EN\FactSheet\PVD\styles\summary.css" />
+    <Content Include="EN\FactSheet\PVD\Return.aspx" />
+    <Content Include="EN\FactSheet\PVD\Summary.aspx" />
     <Content Include="EN\FactSheet\scripts\summary.js" />
     <Content Include="EN\FactSheet\styles\summary.css" />
     <Content Include="EN\FactSheet\Summary.aspx" />
@@ -407,9 +416,7 @@
     <Content Include="test\project.aspx" />
     <Content Include="test\scripts\project.js" />
     <Content Include="test\styles\default.css" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -423,6 +430,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\CalcController.cs" />
     <Compile Include="Controllers\EquityController.cs" />
     <Compile Include="Controllers\HiportController.cs" />
     <Compile Include="Controllers\DeltaController.cs" />
@@ -435,6 +443,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ComparePerfData.cs" />
     <Compile Include="Models\Index.cs" />
     <Compile Include="Models\CounterpartyTier.cs" />
     <Compile Include="Models\DynamicEntity.cs" />
@@ -444,6 +453,7 @@
     <Compile Include="Models\PortfolioBenchmark.cs" />
     <Compile Include="Models\FundFactSheet.cs" />
     <Compile Include="Models\PortfolioPerformanceReport.cs" />
+    <Compile Include="Models\PVDMonthlyReturn.cs" />
     <Compile Include="Models\PVDUploadReturn.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\EquityDelta.cs" />

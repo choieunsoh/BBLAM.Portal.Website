@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Import PF Return Text File" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" Inherits="BBLAM.Web.UI.PageBase" %>
+﻿<%@ Page Title="Import PF Return Excel File" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" Inherits="BBLAM.Web.UI.PageBase" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="<% =ResolveUrl("~/plugins/FormValidation/v0.8.1/css/formValidation.min.css") %>" rel="stylesheet" />
     <link href="<% =ResolveUrl("styles/pf.css") %>" rel="stylesheet" type="text/css" />
@@ -8,7 +8,7 @@
         <div class="col-xs-12">
             <div class="heading-title">
                 <h4>
-                    <i class="fa fa-upload"></i> Import PF Return Text File
+                    <i class="fa fa-upload"></i> Import PF Return Excel File
                 </h4>
             </div>
         </div>

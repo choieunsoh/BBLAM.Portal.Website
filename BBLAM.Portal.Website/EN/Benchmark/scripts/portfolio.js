@@ -112,7 +112,7 @@
         });
 
         return false;
-    })
+    });
 
     setupGrid();
 
@@ -276,6 +276,77 @@
         return false;
     });
 
+    $(document).on('click', '.open-calc-dialog', function (e) {
+        e.preventDefault();
+
+        var $this = $(this);
+        var obj = kendoUtility.grid.getRowData('#grid', $this);
+        if (obj == null) {
+            obj = {
+                port_code: '',
+                start_date: moment(),
+            };
+        }
+
+        BootstrapDialog.show({
+            title: 'Generate Simulated NAV of ' + obj.port_code,
+            closable: false,
+            message: function (dialogRef) {
+                var $message = $('#calcDialog > div').clone();
+
+                var dp_options = $.extend(true, {}, bsUtility.datePicker.getConfig(DateFormats.moment.long, true));
+                $message.find('.dialog-asof').datetimepicker($.extend(true, dp_options, {
+                    defaultDate: obj.start_date,
+                }));
+
+                return $message;
+            },
+            buttons: [{
+                label: 'Close',
+                action: function (dialogRef) {
+                    dialogRef.close();
+                }
+            }, {
+                label: 'Generate Simulated NAV',
+                cssClass: 'btn-primary dialog-btn-save',
+                action: function (dialogRef) {
+                    var $content = dialogRef.getModalContent();
+                    var msg = 'Are you sure you want to generate simulated nav of ' + obj.port_code + ' ?';
+                    $.App.ui.dialog.confirm(msg, function (result) {
+                        if (result) {
+                            var req = $.App.ui.read(null, $content);
+                            var req1 = {
+                                port_code: obj.port_code,
+                                start_date: moment(req.start_date).format('YYYY-MM-DD'),
+                            };
+                            
+                            $.ajax({
+                                data: {
+                                    port_code: req1.port_code,
+                                    start_date: req1.start_date,
+                                },
+                                url: rootapi + '/api/perf/port-bm/gen-sim-nav',
+                                contentType: 'application/json; charset=utf-8',
+                                dataType: 'json',
+                                success: function (data, status, xhr) {
+                                    $.App.ui.dialog.success('The portfolio simulated nav was generated successfully.', function () {
+                                        dialogRef.close();
+                                    });
+                                },
+                                error: function (xhr, status, error) {
+                                    $.App.ui.dialog.alert('Error. ' + error);
+                                }
+                            });
+                        }
+                    });
+
+                }
+            }]
+        });
+
+        return false;
+    });
+
 });
 
 function loadBenchmark() {
@@ -343,6 +414,13 @@ function setupGrid() {
             title: 'Edit',
             template: function (e) {
                 return '<a href="#" class="open-edit-dialog"><i class="fa fa-lg fa-edit"></i></a>';
+            },
+            width: 30,
+        }, {
+            attributes: { 'class': 'text-center' },
+            title: 'Calc',
+            template: function (e) {
+                return '<a href="#" class="open-calc-dialog"><i class="fa fa-lg fa-refresh"></i></a>';
             },
             width: 30,
         }, {

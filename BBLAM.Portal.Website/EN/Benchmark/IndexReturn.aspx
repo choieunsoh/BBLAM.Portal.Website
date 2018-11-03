@@ -171,12 +171,52 @@
             </form>
         </div>
     </div>
+
+    <div id="calcDialog" class="hide">
+        <div class="row">
+            <form id="calcForm">
+                <div class="col-xs-12">
+                    <div class="form-horizontal">
+         
+                        <div class="form-group search-group">
+                            <label class="col-xs-4 control-label">Benchmark :</label>
+				            <div class="col-xs-8">		
+					            <select class="selectpicker2 show-tick" data-field="bm_code" data-live-search="true" title="All benchmarks" data-width="100%"></select>
+				            </div>
+				        </div>
+
+                        <div class="form-group search-group">
+                            <label class="col-xs-4 control-label">Start Date :</label>
+				            <div class="col-xs-8">		
+                                <div class="input-group date" id="txtCalcStart">
+                                    <input type="text" class="form-control lg-date" data-field="asof" data-control="datetime" placeholder="Enter start date" />
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                </div>
+				            </div>
+                        </div>
+
+                        <div class="form-group search-group">
+                            <label class="col-xs-4 control-label">End Date :</label>
+				            <div class="col-xs-8">		
+                                <div class="input-group date" id="txtCalcEnd">
+                                    <input type="text" class="form-control lg-date" data-field="asof" data-control="datetime" placeholder="Enter end date" />
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                </div>
+				            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     
     <script type="text/x-kendo-template" id="templateAdd">
         <div class="row">
             <div class="col-xs-7 col-sm-9 btn-toolbar">
                 <button class="btn btn-success btn-add"><i class="fa fa-plus"></i> Add</button>
                 <button class="btn btn-warning btn-upload"><i class="fa fa-upload"></i> Upload</button>
+                <button class="btn btn-danger btn-calc"><i class="fa fa-refresh"></i> Calc BM Return (after upload index return)</button>
             </div>
             <div class="col-xs-3 col-sm-2 pull-right"><button class="k-grid-excel btn btn-excel pull-right"><i class="fa fa-download" aria-hidden="true"></i></button></div>
         </div>

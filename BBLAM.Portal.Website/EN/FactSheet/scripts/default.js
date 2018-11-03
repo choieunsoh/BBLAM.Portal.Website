@@ -11,13 +11,7 @@ $(function () {
     $('#txtAsof').datetimepicker($.extend(true, dp_options, {
         date: moment().add('month', -1).endOf('month'),
     }));
-    var fund_type = $('#ddlFundType').find('option:selected').val();
-    $.App.loadFunds(fund_type);
-
-    $('#ddlFundType').on('changed.bs.select', function (e, clickedIndex, newValue, oldValue) {
-        var fund_type = $(e.currentTarget).val();
-        $.App.loadFunds(fund_type);
-    });
+    $.App.loadFunds('MF');
 
     $('#btnView').on('click', function (e) {
         e.preventDefault();
@@ -251,7 +245,7 @@ function refreshData(regen) {
             parameterMap: function (data, type) {
                 return {
                     report_date: asof.format('YYYY-MM-DD'),
-                    fund_type: $.App.getFundType(),
+                    fund_type: 'MF',
                     port_code: port_code,
                     regen: regen,
                 };
@@ -387,7 +381,7 @@ function refreshAnnuallyData(regen) {
             parameterMap: function (data, type) {
                 return {
                     report_date: asof.format('YYYY-MM-DD'),
-                    fund_type: $.App.getFundType(),
+                    fund_type: 'MF',
                     port_code: port_code,
                     regen: regen,
                 };
@@ -449,7 +443,7 @@ function generateAllFunds() {
             $.ajax({
                 data: {
                     report_date: asof.format('YYYY-MM-DD'),
-                    fund_type: $.App.getFundType(),
+                    fund_type: 'MF',
                 },
                 url: rootapi + '/api/perf/report/gen-factsheet',
                 contentType: 'application/json; charset=utf-8',

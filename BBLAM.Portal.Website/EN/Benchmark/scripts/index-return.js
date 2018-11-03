@@ -1,6 +1,7 @@
 ﻿$(function () {
     refreshData();
     loadIndex();
+    loadBenchmark();
 
     $(document).on('click', '.btn-upload', function (e) {
         e.preventDefault();
@@ -113,7 +114,79 @@
         });
 
         return false;
-    })
+    });
+
+    $(document).on('click', '.btn-calc', function (e) {
+        e.preventDefault();
+
+        var dialog = null;
+        BootstrapDialog.show({
+            title: 'Calculate Benchmark Return',
+            closable: false,
+            message: function (dialogRef) {
+                var $message = $('#calcDialog > div').clone();
+
+                var dates = getCalcDate();
+                var $picker = $message.find('#txtCalcStart');
+                var dp_options = $.extend(true, {}, bsUtility.datePicker.getConfig(DateFormats.moment.long, true));
+                $picker.datetimepicker($.extend(true, dp_options, {
+                    defaultDate: moment(dates[0]),
+                }));
+
+                $picker = $message.find('#txtCalcEnd');
+                $picker.datetimepicker($.extend(true, dp_options, {
+                    defaultDate: moment(dates[1]),
+                }));
+
+                $message.find('.selectpicker2').val('').selectpicker('refresh');
+
+                return $message;
+            },
+            buttons: [{
+                label: 'Close',
+                action: function (dialogRef) {
+                    dialogRef.close();
+                }
+            }, {
+                icon: 'fa fa-refresh',
+                label: 'Calc BM Return',
+                cssClass: 'btn-danger dialog-btn-upload',
+                action: function (dialogRef) {
+                    dialog = null;
+                    var $content = dialogRef.getModalContent();
+                    var asof = moment($content.find("#txtCalcStart").data('DateTimePicker').date());
+                    var asof_to = moment($content.find("#txtCalcEnd").data('DateTimePicker').date());
+                    var bm_code = $content.find('select[data-field=bm_code]').val();
+                    $.App.ui.dialog.confirm('Are you sure you want to calculate \'Benchmark Return\' ?', function (result) {
+                        if (result) {
+                            $.ajax({
+                                async: false,
+                                type: 'GET',
+                                url: rootapi + '/api/perf/bm-ret/calc',
+                                contentType: 'application/json; charset=utf-8',
+                                dataType: 'json',
+                                data: {
+                                    start_date: asof.format('YYYY-MM-DD'),
+                                    end_date: asof_to.format('YYYY-MM-DD'),
+                                    bm_code: bm_code,
+                                },
+                                success: function (data, status, xhr) {
+                                    $.App.ui.dialog.success('Benchmark Return was calculated successfully.', function (e) {
+                                        dialogRef.close();
+                                    });
+                                },
+                                error: function (xhr, status, error) {
+                                    $.App.ui.dialog.alert('Error. ' + error);
+                                }
+                            });
+                        }
+                    });
+                }
+            }]
+        });
+
+        return false;
+    });
 
     $(document).on('click', '.open-edit-dialog, .btn-add', function (e) {
         e.preventDefault();
@@ -286,6 +359,23 @@
     })
 
 });
+
+function loadBenchmark() {
+    $.ajax({
+        url: rootapi + '/api/perf/bm/all-code',
+        global: false,
+        type: 'GET',
+        success: function (data) {
+            var $ddl = $('select[data-field=bm_code]');
+            $ddl.html('');
+            for (var i = 0; i < data.length; i++) {
+                var $opt = $('<option></option>').val(data[i]).html(data[i]);
+                $ddl.append($opt);
+            }
+        },
+    });
+
+}
 
 function refreshData() {
     $.ajax({
@@ -503,4 +593,20 @@ function removeDocument(e) {
     var uid = e.files[0].uid;
     var $li = $('li.k-file[data-uid="' + uid + '"]');
     $('li.k-file[data-uid="' + uid + '"]').remove();
+}
+
+function getCalcDate() {
+    var result = [];
+    $.ajax({
+        url: rootapi + '/api/perf/bm-ret/calc-avail',
+        async: false,
+        type: 'GET',
+        success: function (data) {
+            result = data;
+        },
+    });
+    if (result == null || result.length != 2) {
+        result = [moment().startOf('day'), moment().startOf('day')];
+    }
+    return result;
 }
